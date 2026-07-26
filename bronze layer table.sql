@@ -1,0 +1,63 @@
+-- creating table in bronze layer
+-- ============================================
+-- BRONZE LAYER — Raw ingestion
+-- supply_chain_raw.csv → supply_chain_bronze
+-- ============================================
+
+DROP TABLE IF EXISTS supply_chain_bronze;
+
+CREATE TABLE bronze_sc.supply_chain_bronze (
+    Type                        VARCHAR(50),
+    Days_for_shipping_real      INT,
+    Days_for_shipment_scheduled INT,
+    Benefit_per_order           DOUBLE,
+    Sales_per_customer          DOUBLE,
+    Delivery_Status             VARCHAR(50),
+    Late_delivery_risk          INT,
+    Category_Id                 INT,
+    Category_Name               VARCHAR(100),
+    Customer_City               VARCHAR(100),
+    Customer_Country            VARCHAR(100),
+    Customer_Email              VARCHAR(150),
+    Customer_Fname              VARCHAR(100),
+    Customer_Id                 INT,
+    Customer_Lname              VARCHAR(100),
+    Customer_Password           VARCHAR(255),
+    Customer_Segment            VARCHAR(50),
+    Customer_State              VARCHAR(100),
+    Customer_Street             VARCHAR(255),
+    Customer_Zipcode            VARCHAR(20),
+    Department_Id               INT,
+    Department_Name             VARCHAR(100),
+    Latitude                    DOUBLE,
+    Longitude                   DOUBLE,
+    Market                      VARCHAR(50),
+    Order_City                  VARCHAR(100),
+    Order_Country               VARCHAR(100),
+    Order_Customer_Id           INT,
+    Order_Date                  VARCHAR(50),
+    Order_Id                    INT,
+    Order_Item_Cardprod_Id      INT,
+    Order_Item_Discount         DOUBLE,
+    Order_Item_Discount_Rate    DOUBLE,
+    Order_Item_Id               INT,
+    Order_Item_Product_Price    DOUBLE,
+    Order_Item_Profit_Ratio     DOUBLE,
+    Order_Item_Quantity         INT,
+    Sales                       DOUBLE,
+    Order_Item_Total            DOUBLE,
+    Order_Profit_Per_Order      DOUBLE,
+    Order_Region                VARCHAR(100),
+    Order_State                 VARCHAR(100),
+    Order_Status                VARCHAR(50),
+    Order_Zipcode               VARCHAR(20),
+    Product_Card_Id             INT,
+    Product_Category_Id         INT,
+    Product_Description         VARCHAR(500),
+    Product_Image               VARCHAR(500),
+    Product_Name                VARCHAR(255),
+    Product_Price               DOUBLE,
+    Product_Status              INT,
+    Shipping_Date               VARCHAR(50),
+    Shipping_Mode               VARCHAR(50)
+);
