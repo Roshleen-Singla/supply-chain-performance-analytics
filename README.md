@@ -74,7 +74,7 @@ Power BI dashboard
 The Gold layer is modeled as a star schema with one fact table and eight dimensions:
 
 **Fact table**
-- `fact_order_items` — grain: one row per order line item. Contains all numeric measures (sales, discount, profit, quantity, shipping days, late delivery risk) plus foreign keys to every dimension.
+- `fact_order` — grain: one row per order line item. Contains all numeric measures (sales, discount, profit, quantity, shipping days, late delivery risk) plus foreign keys to every dimension.
 
 **Dimension tables**
 - `dim_customers` — customer identity and home address
@@ -88,6 +88,7 @@ The Gold layer is modeled as a star schema with one fact table and eight dimensi
 
 Order Status is kept as a degenerate dimension directly on the fact table rather than normalized out, since it carries no additional describable attributes.
 
+![Star Schema](star_schema_data_model.png)
 ## Key Measures
 
 Built in DAX on top of the fact table, grouped by theme:
@@ -133,7 +134,7 @@ A single-page dashboard designed to cover sales, profitability, operations, and 
 │   └── supply_chain_dashboard.pbix
 ├── assets/
 │   ├── dashboard_overview.png
-│   └── er_diagram.png
+│   └── star_schema_data_model.png
 ├── docs/
 │   └── data_dictionary.md
 └── README.md
